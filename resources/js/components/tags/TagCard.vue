@@ -1,6 +1,15 @@
 <template>
-    <div class="container">
-
+    <div>
+        <!-- Stampare la lista dei posts di questo preciso tag -->
+        <ul>
+            <li :v-for="elem in tag">
+                <ul>
+                    <li :v-for="post in elem.posts">
+                        {{ post.title }}
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -11,18 +20,18 @@ export default {
     },
     data() {
         return {
-            post: null,
+            tag: [],
         }
     },
     mounted() {
-        this.getPost();
+        this.getTag();
     },
     methods: {
-        getPost() {
+        getTag() {
             axios.get('http://localhost:8000/api/tags/' + this.$route.params.name)
                 .then((res) => {
                     console.log(res.data);
-                    this.post = res.data;
+                    this.tag = res.data;
                 }).catch(err => {
                     console.log(err)
                 })
