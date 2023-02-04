@@ -2,9 +2,9 @@
     <div>
         <!-- Stampare la lista dei posts di questo preciso tag -->
         <ul>
-            <li :v-for="elem in tag">
+            <li v-for="elem in tag">
                 <ul>
-                    <li :v-for="post in elem.posts">
+                    <li v-for="post in elem.posts">
                         {{ post.title }}
                     </li>
                 </ul>

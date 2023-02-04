@@ -12,7 +12,7 @@
                     {{ elem.category.name }}
                 </span>
                 <ol>
-                    <li :v-for="tag in elem.tags">{{ tag.name }}</li>
+                    <li v-for="tag in elem.tags">{{ tag.name }}</li>
                 </ol>
             </li>
         </ul>

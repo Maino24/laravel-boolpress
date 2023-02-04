@@ -2515,11 +2515,9 @@ var render = function render() {
       attrs: {
         to: "/posts/".concat(elem.id)
       }
-    }, [_vm._v("\n            " + _vm._s(elem.title) + "\n            ")]), _vm._v(" "), elem.category ? _c("span", [_vm._v("\n                " + _vm._s(elem.category.name) + "\n            ")]) : _vm._e(), _vm._v(" "), _c("ol", [_c("li", {
-      attrs: {
-        "v-for": _vm.tag in elem.tags
-      }
-    }, [_vm._v(_vm._s(_vm.tag.name))])])], 1);
+    }, [_vm._v("\n            " + _vm._s(elem.title) + "\n            ")]), _vm._v(" "), elem.category ? _c("span", [_vm._v("\n                " + _vm._s(elem.category.name) + "\n            ")]) : _vm._e(), _vm._v(" "), _c("ol", _vm._l(elem.tags, function (tag) {
+      return _c("li", [_vm._v(_vm._s(tag.name))]);
+    }), 0)], 1);
   }), 0) : _c("p", [_vm._v("Non ci sono psts nel db")]), _vm._v(" "), _c("Pagination", {
     attrs: {
       pagination: _vm.pagination
@@ -2549,15 +2547,11 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("ul", [_c("li", {
-    attrs: {
-      "v-for": _vm.elem in _vm.tag
-    }
-  }, [_c("ul", [_c("li", {
-    attrs: {
-      "v-for": _vm.post in _vm.elem.posts
-    }
-  }, [_vm._v("\n                    " + _vm._s(_vm.post.title) + "\n                ")])])])])]);
+  return _c("div", [_c("ul", _vm._l(_vm.tag, function (elem) {
+    return _c("li", [_c("ul", _vm._l(elem.posts, function (post) {
+      return _c("li", [_vm._v("\n                    " + _vm._s(post.title) + "\n                ")]);
+    }), 0)]);
+  }), 0)]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
