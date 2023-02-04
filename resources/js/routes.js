@@ -9,6 +9,7 @@ import AboutUs from './views/pages/AboutUs.vue';
 import PostsIndex from './views/pages/posts/PostsIndex.vue';
 import HomePage from './views/pages/HomePage.vue';
 import PostShow from './views/pages/posts/PostShow.vue';
+import TagsIndex from './views/pages/tags/TagsIndex.vue';
 
 const router = new VueRouter({ //quando utilizzo new instanzio il router di vue e lo abbino alla variabile router
     //scriverò tutti i miei path per le diverse pagine
@@ -35,6 +36,12 @@ const router = new VueRouter({ //quando utilizzo new instanzio il router di vue 
             path: '/posts/:id',
             name: 'singlePost',
             component: PostShow
+        },
+        {
+
+            path: '/tags',
+            name: 'tags',
+            component: TagsIndex
         }
     ]
 });
